@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Infireturns 데이터 삭제 요청</title>
+  <style>
+    :root{
+      --bg:#fffdfd; --text:#282329; --muted:#746970; --line:#eadfe4;
+      --accent:#6d5dfb; --soft:#f7f5ff; --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;
+      line-height:1.72;
+    }
+    main{max-width:800px;margin:0 auto;padding:48px 20px 72px}
+    h1{font-size:2rem;line-height:1.25;margin:0 0 10px}
+    h2{font-size:1.2rem;margin:0 0 10px}
+    p,li{font-size:1rem}
+    .lead{color:var(--muted);margin-bottom:26px}
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      margin:18px 0;
+    }
+    .soft{background:var(--soft)}
+    a{color:var(--accent)}
+    .button{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      text-decoration:none;
+      font-weight:750;
+      padding:12px 18px;
+      border-radius:12px;
+      margin-top:8px;
+    }
+    code{
+      background:#f4f0f3;
+      padding:2px 6px;
+      border-radius:6px;
+    }
+    footer{
+      margin-top:40px;
+      padding-top:20px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Infireturns 데이터 삭제 요청</h1>
+  <p class="lead">
+    계정을 삭제하지 않고도 Infireturns에 저장된 일부 또는 전체 학습 데이터의 삭제를 요청할 수 있습니다.
+    계정 자체를 삭제하려는 경우에는 별도의 계정 삭제 페이지를 이용해 주세요.
+  </p>
+
+  <section class="card soft">
+    <h2>앱에서 직접 삭제할 수 있는 데이터</h2>
+    <p>
+      Infireturns에서는 학습 항목, 학습 분류, 템플릿, 템플릿 그룹 등
+      앱에서 제공하는 삭제 기능을 이용해 일부 데이터를 직접 삭제할 수 있습니다.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>앱 밖에서 데이터 삭제 요청</h2>
+    <p>
+      앱에 접근할 수 없거나 클라우드에 저장된 특정 데이터를 삭제하고 싶다면
+      아래 이메일로 요청할 수 있습니다.
+    </p>
+    <p>요청 메일에는 다음 내용을 포함해 주세요.</p>
+    <ul>
+      <li>Infireturns에 가입한 이메일 주소</li>
+      <li>삭제를 원하는 데이터 범위</li>
+      <li>예: 모든 학습 데이터 / 특정 학습 항목 / 템플릿 / 템플릿 그룹 / 복습 기록</li>
+    </ul>
+    <p>
+      다른 사용자의 데이터를 임의로 삭제하지 않도록 계정 소유 여부 확인이 필요할 수 있습니다.
+    </p>
+
+    <a class="button"
+       href="mailto:itsmedev986@gmail.com?subject=Infireturns%20데이터%20삭제%20요청&body=Infireturns%20가입%20이메일:%0A%0A삭제를%20원하는%20데이터:%0A%0A추가%20내용:%0A">
+      이메일로 데이터 삭제 요청
+    </a>
+  </section>
+
+  <section class="card">
+    <h2>삭제할 수 있는 데이터 예시</h2>
+    <ul>
+      <li>학습 항목 및 예정된 복습 일정</li>
+      <li>복습 완료 기록 및 학습 진행 정보</li>
+      <li>학습 분류</li>
+      <li>복습 프로필 및 사용자 지정 복습 주기</li>
+      <li>학습 템플릿</li>
+      <li>템플릿 그룹</li>
+      <li>그 밖에 해당 계정의 Cloud Firestore에 저장된 Infireturns 학습 데이터</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>계정은 유지됩니다</h2>
+    <p>
+      이 페이지를 통한 데이터 삭제 요청은 별도로 계정 삭제를 요청하지 않는 한
+      Firebase Authentication의 Infireturns 계정을 유지한 상태에서 요청된 학습 데이터를 삭제하기 위한 것입니다.
+    </p>
+    <p>
+      계정 자체와 연결된 데이터를 함께 삭제하려면
+      <a href="delete-account.html">Infireturns 계정 및 데이터 삭제 페이지</a>를 이용해 주세요.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>다른 기기의 로컬 데이터</h2>
+    <p>
+      삭제 요청으로 클라우드 데이터가 제거되더라도 다른 휴대전화나 태블릿에 이미 저장된
+      로컬 복사본은 원격으로 제거되지 않을 수 있습니다.
+      필요한 경우 해당 기기에서 앱 데이터를 삭제하거나 관련 학습 항목을 직접 삭제해 주세요.
+    </p>
+  </section>
+
+  <footer>
+    <p>
+      개발자: itsmeYM<br>
+      문의: <a href="mailto:itsmedev986@gmail.com">itsmedev986@gmail.com</a><br>
+      <a href="./">개인정보처리방침</a> ·
+      <a href="delete-account.html">계정 및 데이터 삭제</a>
+    </p>
+  </footer>
+</main>
+</body>
+</html>
